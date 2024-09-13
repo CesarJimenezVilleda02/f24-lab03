@@ -21,7 +21,6 @@ class InheritanceSortedIntList extends SortedIntList {
    */
   public add(num: number): boolean {
     this.totalAdded++
-    console.log(this.totalAdded)
     return super.add(num)
   }
 
