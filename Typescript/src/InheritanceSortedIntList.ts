@@ -1,4 +1,5 @@
 import { SortedIntList } from './hidden/SortedIntListLibrary.js'
+import { IntegerList } from './IntegerList.js'
 
 /**
  * InheritanceSortedIntList -- a variant of a SortedIntList that keeps
@@ -9,10 +10,29 @@ import { SortedIntList } from './hidden/SortedIntListLibrary.js'
  * @author Nora Shoemaker
  *
  */
+class InheritanceSortedIntList extends SortedIntList {
+  private totalAdded: number = 0
 
-class InheritanceSortedIntList {
-  // Write your implementation below with API documentation
+  /**
+   * Adds the specified int to the list and counts the attempt.
+   *
+   * @param num an integer to be added to the list
+   * @return true if the list is changed as a result of the call
+   */
+  public add(num: number): boolean {
+    this.totalAdded++
+    console.log(this.totalAdded)
+    return super.add(num)
+  }
 
+  /**
+   * Returns the total number of attempts to add elements to the list.
+   *
+   * @return the total number of attempts to add elements to the list
+   */
+  public getTotalAdded(): number {
+    return this.totalAdded
+  }
 }
 
 export { InheritanceSortedIntList }
